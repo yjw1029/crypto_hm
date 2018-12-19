@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import {KeyInputService} from './key-input.service';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cry-hm';
+  navLinks = [
+    {
+      label: 'Mobile端',
+      path: '/mobile',
+      index: 0
+    }, {
+      label: 'ATM端',
+      path: '/atm',
+      index: 1
+    }
+  ]
+  constructor(
+  ) {}
 }

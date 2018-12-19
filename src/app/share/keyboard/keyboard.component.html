@@ -1,0 +1,32 @@
+<div class="keyboard-container" >
+  <table class="keyboard-container-table">
+    <tbody class="keyboard-body">
+    <tr>
+      <td class="keyboard-item" (click)="input_num(1)">1</td>
+      <td class="keyboard-item" (click)="input_num(2)">2</td>
+      <td class="keyboard-item" (click)="input_num(3)">3</td>
+      <td class="keyboard-item" (click)="input_num(-1)" rowspan="2">
+        <mat-icon>cancel_presentation</mat-icon>
+      </td>
+    </tr>
+    <tr>
+      <td class="keyboard-item" (click)="input_num(4)">4</td>
+      <td class="keyboard-item" (click)="input_num(5)">5</td>
+      <td class="keyboard-item" (click)="input_num(6)">6</td>
+    </tr>
+    <tr>
+      <td class="keyboard-item" (click)="input_num(7)">7</td>
+      <td class="keyboard-item" (click)="input_num(8)">8</td>
+      <td class="keyboard-item" (click)="input_num(9)">9</td>
+      <td class="keyboard-item" (click)="input_num(10)" rowspan="2">确定</td>
+    </tr>
+    <tr>
+      <td class="keyboard-item" (click)="input_num(11)">.</td>
+      <td class="keyboard-item" (click)="input_num(0)">0</td>
+      <td class="keyboard-item" (click)="input_num(-2)">
+        <mat-icon>keyboard_hide</mat-icon>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

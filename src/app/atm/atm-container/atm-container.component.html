@@ -1,0 +1,12 @@
+<div class="atm-container">
+  <div class="atm-screen" align="center">
+    <app-atm-screen [num]="number"></app-atm-screen>
+  </div>
+  <div class="atm-keyboard" align="center">
+    <app-keyboard></app-keyboard>
+  </div>
+  <div style="width: 100%">
+    <p> 输入的数字串: {{input.join('')}}</p>
+    <p> 实际密码: {{pswd.join('')}}</p>
+  </div>
+</div>

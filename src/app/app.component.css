@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+}
+nav a{
+  color: #000000;
+}
+::ng-deep .mat-tab-links {
+  justify-content: center;
+}

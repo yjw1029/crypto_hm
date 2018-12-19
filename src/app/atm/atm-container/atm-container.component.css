@@ -1,0 +1,24 @@
+.atm-container{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width:100%;
+}
+.atm-keyboard{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.atm-screen{
+  display: flex;
+  justify-content: flex-end;
+}
+
+app-keyboard {
+  padding: 60px;
+}
+
+app-atm-screen {
+  padding: 60px;
+}

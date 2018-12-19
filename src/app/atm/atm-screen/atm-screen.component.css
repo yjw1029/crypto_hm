@@ -1,0 +1,19 @@
+.screen-container{
+  width:360px;
+  background: #ffffff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.screen-body, .screen-container-table{
+  width: 100%;
+}
+.screen-item{
+  width: 25%;
+  height: 50px;
+  text-align: center;
+  font-size: 25.5px;
+  color: rgb(42, 43, 44);
+  position: relative;
+  border: 1px solid rgb(217, 217, 217);
+}

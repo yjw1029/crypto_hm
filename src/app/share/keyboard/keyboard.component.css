@@ -1,0 +1,20 @@
+.keyboard-container{
+  width:360px;
+  background: #f7f7f7;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.keyboard-body, .keyboard-container-table{
+  width: 100%;
+}
+.keyboard-item{
+  width: 25%;
+  height: 50px;
+  text-align: center;
+  font-size: 25.5px;
+  color: rgb(42, 43, 44);
+  position: relative;
+  border-left: 1px solid rgb(217, 217, 217);
+  border-bottom: 1px solid rgb(217, 217, 217);
+}

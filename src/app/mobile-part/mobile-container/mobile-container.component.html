@@ -1,0 +1,12 @@
+<div class="mobile-container">
+  <div class="header">
+    <span class="left">10:14</span>
+    <span class="right">&nbsp;&nbsp;38%</span>
+    <span class="right">&nbsp;&nbsp;0.17k/s</span>
+  </div>
+  <router-outlet></router-outlet>
+  <app-keyboard *ngIf="ifShowKey" appNomousedown class="keyboard" ></app-keyboard>
+  <div class="footer">
+    <mat-icon style="color:white" routerLink="/mobile">crop_din</mat-icon>
+  </div>
+</div>
