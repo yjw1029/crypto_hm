@@ -44,7 +44,8 @@
 app-keyboard {
   position: absolute;
   bottom: 0px;
-  left: 0px
+  left: 0px;
+  z-index:100;
 }
 .result-container {
   border: #424242 solid 1px;
