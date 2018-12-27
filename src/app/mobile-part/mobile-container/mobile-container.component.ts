@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {KeyInputService} from '../../key-input.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ShowInfoService} from '../show-info.service';
 
 @Component({
   selector: 'app-mobile-container',
@@ -10,12 +11,17 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class MobileContainerComponent implements OnInit, OnDestroy {
   ifShowKey = false;
   showCount = 0;
+  info: any;
+  private myEventSubscription;
+  private keySubscription;
   constructor(
-    private key_input: KeyInputService
+    private key_input: KeyInputService,
+    private show_info: ShowInfoService
   ) { }
 
   ngOnInit() {
-    this.key_input.show.subscribe((data) => {
+    this.info = this.show_info.getInfo();
+    this.keySubscription = this.key_input.show.subscribe((data) => {
        this.showCount = data ? this.showCount + 1 : this.showCount - 1;
        if (this.showCount > 0 ) {
          this.show();
@@ -24,9 +30,17 @@ export class MobileContainerComponent implements OnInit, OnDestroy {
        }
       }
     );
+    this.myEventSubscription = this.show_info.info_change.subscribe(
+      (change) => {
+        if (change) {
+          this.info = this.show_info.getInfo();
+        }
+      }
+    );
   }
   ngOnDestroy() {
-    this.key_input.show.unsubscribe();
+    this.keySubscription.unsubscribe();
+    this.myEventSubscription.unsubscribe();
   }
   show() {
     this.ifShowKey = true;

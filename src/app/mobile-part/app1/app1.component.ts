@@ -4,6 +4,7 @@ import {KeyInputService} from '../../key-input.service';
 import {crypto} from '../../cypto/crypto';
 import {setKey, consultKey, Key} from '../../cypto/keys';
 import {PASSWORDS} from '../../cypto/password';
+import {ShowInfoService} from '../show-info.service';
 
 @Component({
   selector: 'app-app1',
@@ -18,22 +19,29 @@ export class App1Component implements OnInit, OnDestroy {
   private myEventSubscription;
   pswd1 = new FormControl(this.input);
   constructor(
-    private key_input: KeyInputService
+    private key_input: KeyInputService,
+    private show_info: ShowInfoService
   ) { }
 
   ngOnInit() {
     this.key = this.getKey();
-    console.log(this.key);
+    this.show_info.setInfo(this.key, this.input, this.pswd1.value);
+    // console.log(this.key);
     this.myEventSubscription = this.key_input.input.subscribe(
       (data) => {
-        this.input = this.input + data;
+        if (data === -1) {
+          this.input = this.input.slice(0, -1);
+        } else {
+          this.input = this.input + data;
+        }
         this.pswd1.setValue( crypto(this.input, this.key, (this.input).length));
-        console.log(this.input);
+        this.show_info.setInfo(this.key, this.input, this.pswd1.value);
       }
     );
   }
   ngOnDestroy() {
     this.myEventSubscription.unsubscribe();
+    this.show_info.clear();
   }
   getKey(): number[] {
     const rslt = consultKey(this.id);

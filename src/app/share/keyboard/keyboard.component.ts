@@ -18,4 +18,7 @@ export class KeyboardComponent implements OnInit {
     console.log('clicked');
     this.key_iput.input.emit(number);
   }
+  hide() {
+    this.key_iput.show.emit(false);
+  }
 }
